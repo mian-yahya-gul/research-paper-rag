@@ -27,9 +27,9 @@ construction, generation, and citation
 -  Similarity search retrieval with relevance scores
 -  Citation enforcing prompt template (page-level `[Source, p. X]` tags)
 -  LangGraph orchestrated pipeline: `retrieve → generate`
--  Multi turn conversation memory (follo up question resolution)
--  Sidebar showing indexed documents, with clear chat / clear-documents controls
--  Idempotent ingestion  re uploading a paper does not duplicate chunks
+-  Multi turn conversation memory (follow up question resolution)
+-  Sidebar showing indexed documents, with clear chat / clear documents controls
+-  Idempotent ingestion  reuploading a paper does not duplicate chunks
 -  Unit tests for chunking and citation logic
 
 
@@ -40,16 +40,16 @@ construction, generation, and citation
           │
           ▼
  ┌──────────────────┐
- │  retrieve          │   similarity_search_with_score(question, k)
- │  (graph/nodes/     │   → List[RetrievedChunk]
+ │  retrieve          │   
+ │  (graph/nodes/     │  
  │   retrieve.py)     │
  └────────┬──────────┘
           │
           ▼
  ┌──────────────────┐
- │  generate          │   build_context_block(chunks)
- │  (graph/nodes/     │   → RAG_PROMPT | ChatOpenAI | StrOutputParser
- │   generate.py)     │   → answer + build_citations(chunks)
+ │  generate          │ 
+ │  (graph/nodes/     │   
+ │   generate.py)     │ 
  └────────┬──────────┘
           │
           ▼
