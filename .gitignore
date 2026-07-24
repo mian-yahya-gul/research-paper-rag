@@ -1,0 +1,24 @@
+# Environment
+.env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Data (do not commit uploaded papers or the vector store)
+data/uploads/*
+!data/uploads/.gitkeep
+data/vectorstore/*
+!data/vectorstore/.gitkeep
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
